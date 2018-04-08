@@ -387,10 +387,12 @@ class CircleChanger(object):
         #   the center and radius of the new CircleChanger.
         #   NO CREDIT if you use the distance formula here.
         ################################################################
-        radius = self.get_distance_from(other_circle_changer.circle.center)
-        center_point = self.circle.center.x - other_circle_changer.circle.radius.
-        self.circle.fill_color = 'red'
 
+        radius = self.get_distance_from(other_circle_changer.circle.center)/ 2
+        center_point_x = self.circle.center.x - other_circle_changer.circle.radius.x
+        center_point_y = self.circle.center.y - other_circle_changer.circle.radius.y
+        self.circle.fill_color = 'red'
+        return CircleChanger(center_point_x, center_point_y, radius, self.circle.fill_color, self.colors)
 
 
     def change_color(self, index_of_color):
